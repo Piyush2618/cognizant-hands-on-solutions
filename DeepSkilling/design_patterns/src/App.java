@@ -1,4 +1,3 @@
-import singleton_pattern.Singleton;
 import factory_method_pattern.Factory_method;
 
 public class App {

@@ -2,32 +2,14 @@ package singleton_pattern;
 
 public class Singleton {
 
-    private static Singleton instance;
+    public static void run() {
+        Logger s1 = Logger.getInstance();
+        Logger s2 = Logger.getInstance();
 
-   
-    private Singleton() {
-        System.out.println("Singleton Object Created");
-    }
+        s1.log("First message from singleton logger");
+        s2.log("Second message from singleton logger");
 
-
-    public static Singleton getInstance() {
-        if (instance == null) {
-            instance = new Singleton();
-        }
-        return instance;
-    }
-
-    public void display() {
-        System.out.println("Hello Singleton");
-    }
-    public static void run()
-    {
-        Singleton s1 = Singleton.getInstance();
-        Singleton s2 = Singleton.getInstance();
-
-        s1.display();
-
-        System.out.println(s1 == s2);
+        System.out.println("Same instance? " + (s1 == s2));
     }
 }
 
