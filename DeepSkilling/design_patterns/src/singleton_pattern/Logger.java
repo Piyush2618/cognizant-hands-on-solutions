@@ -4,7 +4,7 @@ public class Logger {
     private static Logger instance;
 
     private Logger() {
-        System.out.println("Logger instance created");
+        System.out.println("Logger created");
     }
 
     public static Logger getInstance() {
@@ -14,7 +14,7 @@ public class Logger {
         return instance;
     }
 
-    public void log(String message) {
-        System.out.println("[LOG] " + message);
+    public void log(String m) {
+        System.out.println("[LOG] " + m);
     }
 }

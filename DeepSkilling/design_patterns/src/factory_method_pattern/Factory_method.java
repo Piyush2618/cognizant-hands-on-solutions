@@ -3,30 +3,30 @@ package factory_method_pattern;
 public class Factory_method {
     
 
-interface Document{
-    void document();
+interface Doc{
+    void doc();
 }
 
-class WordDocument implements  Document{
-    public  void document(){
-        System.out.println("This is worddocument");
+class WordDocument implements  Doc{
+    public  void doc(){
+        System.out.println("word document");
     }
 }
 
-class PdfDocument implements Document{
-    public  void document(){
-        System.out.println("This is a pdf document");
+class PdfDocument implements Doc{
+    public  void doc(){
+        System.out.println("pdf document");
     }
 }
 
-class Exceldocument implements Document{
-    public  void document(){
-        System.out.println("This is a Excel document");
+class Exceldocument implements Doc{
+    public  void doc(){
+        System.out.println("Excel document");
     }
 }
 
 class DocFactory{
-    public Document getdoc(String type){
+    public Doc getdoc(String type){
         if(type.equals("word")){
             return new WordDocument();
         }else if(type.equals("pdf")){
@@ -39,14 +39,14 @@ class DocFactory{
 }
 public void run(){
     DocFactory factory = new DocFactory();
-    Document D1 = factory.getdoc("word");
-    if(D1 != null) D1.document();
+    Doc D1 = factory.getdoc("word");
+    if(D1 != null) D1.doc();
     
-    Document D2 = factory.getdoc("pdf");
-    if(D2 != null) D2.document();
+    Doc D2 = factory.getdoc("pdf");
+    if(D2 != null) D2.doc();
     
-    Document D3 = factory.getdoc("excel");
-    if(D3 != null) D3.document();
+    Doc D3 = factory.getdoc("excel");
+    if(D3 != null) D3.doc();
 }
 }
 

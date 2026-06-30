@@ -1,0 +1,3 @@
+public class Ecommerce_Platform_Search_Function {
+
+}
