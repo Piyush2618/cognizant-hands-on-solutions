@@ -1,4 +1,4 @@
-package com.example;
+package com.Junittesting;
 
 public class Calculator {
 public int sub(int a, int b) {

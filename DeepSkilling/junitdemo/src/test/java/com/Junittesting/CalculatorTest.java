@@ -1,4 +1,4 @@
-package com.example;
+package com.Junittesting;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
