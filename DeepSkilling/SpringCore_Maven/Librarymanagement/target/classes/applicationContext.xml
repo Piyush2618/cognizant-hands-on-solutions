@@ -6,10 +6,14 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="bookrepo"
+    <bean id="repositoryBean"
           class="com.library.repository.Bookrepo"/>
 
-    <bean id="bookservice"
-          class="com.library.service.Bookservice"/>
+    <bean id="serviceBean"
+          class="com.library.service.BookSer">
+
+        <property name="repository" ref="repositoryBean"/>
+
+    </bean>
 
 </beans>
