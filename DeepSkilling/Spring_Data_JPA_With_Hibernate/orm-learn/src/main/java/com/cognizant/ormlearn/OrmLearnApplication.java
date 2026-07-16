@@ -1,9 +1,5 @@
 package com.cognizant.ormlearn;
 
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,30 +8,22 @@ import com.cognizant.ormlearn.model.Country;
 import com.cognizant.ormlearn.service.CountryService;
 
 @SpringBootApplication
+
 public class OrmLearnApplication {
 
-    private static final Logger LOG = LoggerFactory.getLogger(OrmLearnApplication.class);
-
-    private static CountryService countryService;
-
     public static void main(String[] args) {
-        ApplicationContext con = SpringApplication.run(OrmLearnApplication.class, args);
-        LOG.info("Inside main");
-        countryService = con.getBean(CountryService.class);
-        fetch();
-    }
 
-    private static void fetch() {
-        LOG.info("Start");
+        ApplicationContext context =
+                SpringApplication.run(OrmLearnApplication.class, args);
 
-        List<Country> countries = countryService.getAllCountries();
+        CountryService service = context.getBean(CountryService.class);
 
-        LOG.debug("Number of countries retrieved: {}", countries.size());
+        Country country = new Country();
+        country.setCode("FR");
+        country.setName("France");
 
-for (Country country : countries) {
-    LOG.debug("Country Details -> {}", country);
-}
+        service.addCountry(country);
 
-        LOG.info("End");
+        System.out.println("Country Saved");
     }
 }

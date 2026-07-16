@@ -1,7 +1,5 @@
 package com.cognizant.ormlearn.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +15,7 @@ public class CountryService {
     private CountryRepository countryRepository;
 
     @Transactional
-   public List<Country> getAllCountries()
-{
-    List<Country> List = countryRepository.findAll();
-    return List;
-}
+    public void addCountry(Country country) {
+        countryRepository.save(country);
+    }
 }
