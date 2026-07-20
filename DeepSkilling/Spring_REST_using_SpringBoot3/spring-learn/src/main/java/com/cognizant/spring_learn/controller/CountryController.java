@@ -1,24 +1,23 @@
 package com.cognizant.spring_learn.controller;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cognizant.spring_learn.Country;
+import com.cognizant.spring_learn.service.CountryService;
 
 @RestController
 public class CountryController {
 
-    @RequestMapping("/country")
-    public Country getCountryIndia() {
+    @Autowired
+    private CountryService countryService;
 
-        ClassPathXmlApplicationContext cont =
-                new ClassPathXmlApplicationContext("country.xml");
+    @GetMapping("/countries/{code}")
+    public Country getCountry(@PathVariable String code) {
 
-        Country coun = cont.getBean("country", Country.class);
+        return countryService.getCountry(code);
 
-        cont.close();
-
-        return coun;
     }
 }
