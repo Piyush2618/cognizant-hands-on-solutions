@@ -10,7 +10,6 @@
           class="com.cognizant.spring_learn.Country">
 
         <property name="code" value="IN"/>
-
         <property name="name" value="India"/>
 
     </bean>
