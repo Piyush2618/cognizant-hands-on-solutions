@@ -1,0 +1,20 @@
+.App{
+    text-align:center;
+    font-family:Arial;
+}
+
+div{
+    margin:15px;
+}
+
+h1{
+    color:darkblue;
+}
+
+h2{
+    color:green;
+}
+
+hr{
+    margin:20px;
+}
