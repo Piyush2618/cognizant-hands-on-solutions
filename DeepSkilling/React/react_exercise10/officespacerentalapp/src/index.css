@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: darkblue;
+}
+
+img {
+  border-radius: 8px;
+}
